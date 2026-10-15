@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Татьяна Калли | Нотариальные и юридические услуги</title>
+    
+    <!-- Подключение Tailwind CSS для стилизации -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Подключение шрифта Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Подключение иконок FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Подключение надежной библиотеки QRious для генерации QR-кода -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#3b82f6', // Синий цвет для акцентов
+                        dark: '#1e293b',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Плавное появление визитки при загрузке */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .card-animate {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        
+        /* Стили для QR-кода */
+        #qrcode {
+            margin: 0 auto;
+            border-radius: 0.5rem;
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 min-h-screen flex items-center justify-center p-4 text-slate-100 font-sans selection:bg-primary selection:text-white">
+
+    <!-- Контейнер визитки -->
+    <div class="card-animate w-full max-w-sm bg-slate-800/80 backdrop-blur-xl border border-slate-700/50 rounded-3xl p-8 shadow-2xl relative overflow-hidden">
+        
+        <!-- Декоративное свечение на фоне визитки -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-32 bg-primary/20 blur-3xl rounded-full pointer-events-none"></div>
+
+        <!-- Шапка профиля -->
+        <div class="flex flex-col items-center relative z-10 text-center mb-6">
+            <!-- Фотография (заглушка) -->
+            <div class="relative mb-4">
+                <img src="https://placehold.co/150x150/1e293b/ffffff?text=ТК" alt="Татьяна Калли" class="w-28 h-28 rounded-full object-cover border-4 border-slate-800 shadow-lg relative z-10">
+                <!-- Пульсирующее кольцо вокруг аватара -->
+                <div class="absolute inset-0 rounded-full border-2 border-primary/50 animate-ping z-0" style="animation-duration: 3s;"></div>
+            </div>
+            
+            <h1 class="text-2xl font-bold text-white mb-1">Татьяна Калли</h1>
+            <h2 class="text-primary font-medium text-sm mb-2">Нотариальные и юридические услуги</h2>
+            <p class="text-slate-400 text-sm mb-4">
+                <i class="fas fa-map-marker-alt mr-1"></i> Лимассол, Кипр
+            </p>
+
+            <!-- Услуги (Теги) -->
+            <div class="flex flex-wrap justify-center gap-2 text-[11px] text-slate-300">
+                <span class="px-2 py-1 bg-slate-700/50 border border-slate-600/50 rounded-lg">Апостиль и доверенности</span>
+                <span class="px-2 py-1 bg-slate-700/50 border border-slate-600/50 rounded-lg">Переводы и справки</span>
+                <span class="px-2 py-1 bg-slate-700/50 border border-slate-600/50 rounded-lg">Сделки с недвижимостью</span>
+                <span class="px-2 py-1 bg-slate-700/50 border border-slate-600/50 rounded-lg">Регистрация брака</span>
+                <span class="px-2 py-1 bg-slate-700/50 border border-slate-600/50 rounded-lg">Банковские счета</span>
+                <span class="px-2 py-1 bg-slate-700/50 border border-slate-600/50 rounded-lg">Все виды страхования</span>
+                <span class="px-2 py-1 bg-slate-700/50 border border-slate-600/50 rounded-lg">Обмен прав</span>
+            </div>
+        </div>
+
+        <!-- Кнопки для связи -->
+        <div class="flex flex-col gap-3 mb-8 relative z-10">
+            <!-- Телефон -->
+            <a href="tel:+35799579863" class="flex items-center gap-3 w-full p-3 rounded-xl bg-slate-700/50 hover:bg-slate-600 border border-slate-600/50 hover:border-slate-500 transition-all duration-300 group">
+                <div class="w-10 h-10 rounded-lg bg-green-500/20 text-green-500 flex items-center justify-center group-hover:bg-green-500 group-hover:text-white transition-colors">
+                    <i class="fas fa-phone-alt text-lg"></i>
+                </div>
+                <div class="flex flex-col text-left">
+                    <span class="font-medium text-sm text-slate-200">+357 99 579 863</span>
+                    <span class="text-xs text-slate-400">Позвонить</span>
+                </div>
+            </a>
+
+            <!-- WhatsApp -->
+            <a href="https://wa.me/35799579863" target="_blank" class="flex items-center gap-3 w-full p-3 rounded-xl bg-slate-700/50 hover:bg-slate-600 border border-slate-600/50 hover:border-slate-500 transition-all duration-300 group">
+                <div class="w-10 h-10 rounded-lg bg-[#25D366]/20 text-[#25D366] flex items-center justify-center group-hover:bg-[#25D366] group-hover:text-white transition-colors">
+                    <i class="fab fa-whatsapp text-lg"></i>
+                </div>
+                <div class="flex flex-col text-left">
+                    <span class="font-medium text-sm text-slate-200">WhatsApp</span>
+                    <span class="text-xs text-slate-400">Написать сообщение</span>
+                </div>
+            </a>
+
+            <!-- Telegram -->
+            <a href="https://t.me/+35799579863" target="_blank" class="flex items-center gap-3 w-full p-3 rounded-xl bg-slate-700/50 hover:bg-slate-600 border border-slate-600/50 hover:border-slate-500 transition-all duration-300 group">
+                <div class="w-10 h-10 rounded-lg bg-[#0088cc]/20 text-[#0088cc] flex items-center justify-center group-hover:bg-[#0088cc] group-hover:text-white transition-colors">
+                    <i class="fab fa-telegram-plane text-lg"></i>
+                </div>
+                <div class="flex flex-col text-left">
+                    <span class="font-medium text-sm text-slate-200">Telegram</span>
+                    <span class="text-xs text-slate-400">Связаться в мессенджере</span>
+                </div>
+            </a>
+
+            <!-- Email -->
+            <a href="mailto:tac3kalli@gmail.com" class="flex items-center gap-3 w-full p-3 rounded-xl bg-slate-700/50 hover:bg-slate-600 border border-slate-600/50 hover:border-slate-500 transition-all duration-300 group">
+                <div class="w-10 h-10 rounded-lg bg-red-500/20 text-red-500 flex items-center justify-center group-hover:bg-red-500 group-hover:text-white transition-colors">
+                    <i class="fas fa-envelope text-lg"></i>
+                </div>
+                <div class="flex flex-col text-left">
+                    <span class="font-medium text-sm text-slate-200">tac3kalli@gmail.com</span>
+                    <span class="text-xs text-slate-400">Написать письмо</span>
+                </div>
+            </a>
+
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/tatiana.kalli" target="_blank" class="flex items-center gap-3 w-full p-3 rounded-xl bg-slate-700/50 hover:bg-slate-600 border border-slate-600/50 hover:border-slate-500 transition-all duration-300 group">
+                <div class="w-10 h-10 rounded-lg bg-[#1877F2]/20 text-[#1877F2] flex items-center justify-center group-hover:bg-[#1877F2] group-hover:text-white transition-colors">
+                    <i class="fab fa-facebook-f text-lg"></i>
+                </div>
+                <div class="flex flex-col text-left">
+                    <span class="font-medium text-sm text-slate-200">Facebook</span>
+                    <span class="text-xs text-slate-400">Профиль Татьяна Калли</span>
+                </div>
+            </a>
+        </div>
+
+        <!-- Секция QR-кода -->
+        <div class="relative z-10 flex flex-col items-center">
+            <div class="w-full h-px bg-slate-700 mb-6"></div>
+            <p class="text-xs text-slate-400 mb-4 uppercase tracking-wider font-semibold">Отсканируйте, чтобы сохранить</p>
+            
+            <!-- Контейнер для генерации QR -->
+            <div class="bg-white p-3 rounded-xl shadow-lg border-4 border-slate-700/50 transition-transform hover:scale-105 duration-300">
+                <canvas id="qrcode"></canvas>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Скрипт генерации QR-кода -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Данные для контактной карточки (vCard)
+            // Строгое форматирование с переносами строк для совместимости со всеми сканерами
+            const vCardData = 
+                'BEGIN:VCARD\n' +
+                'VERSION:3.0\n' +
+                'N:Калли;Татьяна;;;\n' +
+                'FN:Татьяна Калли\n' +
+                'ORG:Нотариальные и юридические услуги\n' +
+                'TITLE:Специалист / Юрист\n' +
+                'TEL;TYPE=CELL:+35799579863\n' +
+                'EMAIL:tac3kalli@gmail.com\n' +
+                'URL:https://www.facebook.com/tatiana.kalli\n' +
+                'NOTE:Апостиль, доверенности, переводы, недвижимость и др. Лимассол, Кипр.\n' +
+                'END:VCARD';
+
+            // Настройка и генерация QR-кода с помощью надежной библиотеки QRious
+            try {
+                new QRious({
+                    element: document.getElementById('qrcode'),
+                    value: vCardData,
+                    size: 140, // Размер канваса в пикселях
+                    background: '#ffffff', // Белый фон
+                    foreground: '#1e293b', // Темно-синий цвет кода (цвет dark из Tailwind)
+                    level: 'M' // Уровень коррекции ошибок
+                });
+            } catch (error) {
+                console.error('Ошибка генерации QR-кода:', error);
+            }
+        });
+    </script>
+</body>
+</html>
